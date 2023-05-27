@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$txt = "PHP";
+echo "I love $txt!";
+echo strtoupper("Hello WORLD!");
+echo "<br>";
+echo strtolower("Hello WORLD.");
+echo "<br>";
+echo ucfirst("hello world!");
+echo "<br>";
+echo ucwords("hello world");
+?>
+echo "<br>";
+<?php
+$input = '06/10/2011 19:00:02';
+$date = strtotime($input);
+echo date('d/M/Y h:i:s', $date);
+?>
+echo "<br>";
+ <?php
+$word = "fox";
+$mystring = "The quick brown fox jumps over the lazy dog";
+// Test if string contains the word 
+if(strpos($mystring, $word) !== false){
+    echo "Word Found!";
+} else{
+    echo "Word Not Found!";
+}
+?> 
+echo "<br>";
+<?php
+$path = 'www.example.com/public_html/index.php';
+$file_name = substr(strrchr($path, "/"), 1);
+echo $file_name."\n"; // "index.php"
+?>
+<?php
+$mailid  = 'rayy@example.com';
+$user = strstr($mailid, '@', true);
+echo $user."\n";
+?>
+<?php
+$str1 = 'rayy@example.com';
+echo substr($str1, -3)."\n";
+?>
+echo "<br>";
+<?php
+echo(rand() . "<br>");
+echo(rand() . "<br>");
+echo(rand(10,100));
+?>
+echo "<br>";
+<?php
+$str = 'the quick brown fox jumps over the lazy dog.';
+echo preg_replace('/the/', 'That', $str, 1)."\n"; 
+?>
+echo "<br>";
+<?php
+$str1 = 'football';
+$str2 = 'footboll';
+$str_pos = strspn($str1 ^ $str2, "\0");
+printf('First difference between two strings at position %d: "%s" vs "%s"',
+$str_pos, $str1[$str_pos], $str2[$str_pos]);
+printf("\n");
+?>
+echo "<br>";
+
+
+echo "<br>";
+<?php
+$original_string = 'The brown fox';
+$string_to_insert ='quick';
+$insert_pos = 4;
+$new_string = substr_replace($original_string, $string_to_insert.' ', $insert_pos, 0);
+echo $new_string."\n";
+?>
+echo "<br>";
+<?php
+// PHP program to remove all white
+// spaces from a string
+
+// Declare a string
+$str = " 000547023.24";
+	
+// Using str_replace() function
+// to removes all whitespaces
+$str = str_replace(0, '', $str);
+
+// Printing the result
+echo $str;
+?>
+echo "<br>";
+<?php
+$my_str = 'The quick brown fox jumps over the lazy dog';
+echo str_replace("fox", " ", $my_str)."\n";
+?>
+echo "<br>";
+<?php
+$my_str = 'The quick brown fox jumps over the lazy dog---';
+echo rtrim($my_str, '-')."\n";
+?>
+echo "<br>";
+<?php
+// PHP program to Remove
+// Special Character From String
+
+// Function to remove the special
+function RemoveSpecialChar($str) {
+
+	// Using str_replace() function
+	// to replace the word
+	$res = str_replace( array( '\'', '"',
+	',' , ';', '<', '>' ), ' ', $str);
+
+	// Returning the result
+	return $res;
+	}
+
+// Given string
+$str = "Example,to remove<the>Special'Char;";
+
+// Function calling
+$str1 = RemoveSpecialChar($str);
+
+// Printing the result
+echo $str1;
+?>
+
+
+
+
+</body>
+</html>
